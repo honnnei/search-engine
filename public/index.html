@@ -12,13 +12,14 @@
     <section class="container">
         <h1>NotGoogle</h1>
         <h3 id="text">test text</h3>
-        <form id="form" action="/" method="GET">
+        <form id="form" action="/results" method="POST">
             <input type="text" value="" id="searchBox">
             <div class="buttons_container">
-                <input type="submit" id="topTenResultsButton" name="search" value="Search All Results"></input>
-                <input type="submit" id="luckyResultButton" name="lucky" value="Get Lucky"></input>
+                <button type="submit" id="topTenResultsButton">Search All Results</button>
+                <button type="submit" formaction="/luckyresult" id="luckyResultButton">Get Lucky</button>
             </div>
         </form>
+        <!-- <div><a id="luckyLink" href=""></a></div> -->
     </section>  
     <section id="resultsDisplayed">
         <h3 class="title"><a class="link" target="_blank"></a></h3>

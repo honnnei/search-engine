@@ -3,6 +3,13 @@ document.addEventListener("DOMContentLoaded", function(){
     let topTenButtonClick = false;
     let luckyButtonClick = false;
 
+    // $("#form").submit(event => {
+    //     event.preventDefault();
+    //     axios.post("/luckyresult").then(response => {
+    //       quote = response.data;
+    //       console.log(quote);
+    //     });
+    // });
 
     $("#topTenResultsButton").click(function(e) {
         event.preventDefault();
@@ -28,12 +35,39 @@ document.addEventListener("DOMContentLoaded", function(){
             //show lucky result
             let luckyQuery = $("#searchBox").val();
             console.log("will show one lucky result for: " + luckyQuery);
-            showLuckyResult(luckyQuery);
+            // showLuckyResult("https://en.wikipedia.org/wiki/Dog");
+            // gettingLuckyPage();
         }
         else {
             console.log('error');
         }
     }
+
+    
+
+    // function showLuckyResult(linkOfLucky) {
+    //     // let linkOfLucky = "https://en.wikipedia.org/wiki/Dog";
+    //     $("#luckyResultButton").attr("href", linkOfLucky)
+        // $("#luckyLink").html("testing");       
+        // $("#luckyLink").attr("href", );
+        // clickLuckyLink();
+    
+        
+        // $("#luckyLink").trigger('click');
+
+        // axios.get(`https://www.googleapis.com/customsearch/v1?key=AIzaSyBZSy_eMGwVqsKZzHBPvIiBz-HBFmK8Uxo&cx=006369568077011760523:re8fjbecuqp&q=${luckyQuery}`)
+        //         .then(function (result){
+        //             let results = [];
+        //             results = result.data.items
+        //             return results; 
+                       
+        //         });
+
+    // }
+
+    // function clickLuckyLink() {
+        
+    // }
 
     function showTopTenResults(resultsQuery) {
                 axios.get(`https://www.googleapis.com/customsearch/v1?key=AIzaSyBZSy_eMGwVqsKZzHBPvIiBz-HBFmK8Uxo&cx=006369568077011760523:re8fjbecuqp&q=${resultsQuery}`)
@@ -70,17 +104,7 @@ document.addEventListener("DOMContentLoaded", function(){
             });
     }
 
-    function showLuckyResult(luckyQuery) {
-
-        axios.get(`https://www.googleapis.com/customsearch/v1?key=AIzaSyBZSy_eMGwVqsKZzHBPvIiBz-HBFmK8Uxo&cx=006369568077011760523:re8fjbecuqp&q=${luckyQuery}`)
-                .then(function (result){
-                    let results = [];
-                    results = result.data.items
-                    return results; 
-                       
-                });
-
-    }
+    
     // function gettingTopTenSearchQuery() {
     //     $("#topTenResultsButton").click(function(e) {
     //         event.preventDefault();
