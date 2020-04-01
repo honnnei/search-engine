@@ -22,6 +22,10 @@ section.container {
 
 }
 
+input:focus{
+  outline: none;
+}
+
 
 .buttons_container {
   margin: 20px auto 20px auto;
@@ -39,9 +43,9 @@ button {
 }
 
 #searchBox {
-  height: 50px;
+  height: 40px;
   border-radius: 30px;
-  border-color: rgb(177, 170, 170);
+  border-color: rgb(107, 102, 102);
   margin: 20px;
   padding: 20px;
   align-self: center;
