@@ -1,8 +1,30 @@
+html{
+    height:100%
+}
 body {
     display: flex;
+    height:100%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-
-.notLogo
+form{
+    display: flex;
+    flex-direction: column;
+}
+button{
+    width: 25%;
+}
+#searchBox{
+    align-self: center;
+    display: flex;
+    WIDTH: 70%;
+}
+.buttons_container{
+    display: flex;
+    justify-content: space-around;
+    padding-left: 10%;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    padding-right: 10%;
+}
