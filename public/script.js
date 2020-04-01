@@ -79,20 +79,35 @@ document.addEventListener("DOMContentLoaded", function(){
                     // return results; 
                     // getTitleSnippetUrl(results);
                     // console.log(results);
-                    let title = results[0].title;
-                    let snippet = results[0].snippet;
+                    // let title = results[0].title;
+                    // let snippet = results[0].snippet;
                     let link = results[0].link;
                     console.log(link);
-                    displayResult(title, snippet, link);
-                       
+                    // displayResult(title, snippet, link);
+                    displayedResults = results.map(item => {
+                        console.log(item.title);
+                
+                        let index = results.indexOf(item)
+                        displayResult(index, item.title, item.snippet, item.link);
+                    });
+                    // resultsToHtml(displayedResults);  
                 });
     }
 
-    function displayResult(titleOf, snippetOf, linkOf) {
-        $(".link").html(titleOf);
-        $(".snippet").html(snippetOf);
-        // $(".link").html("link");
-        $(".link").attr("href", linkOf);
+    function displayResult(index, titleOf, snippetOf, linkOf) {
+   
+       let id = index.toString();
+       $("#resultsDisplayed").append(`<div id=${id}></div>`);
+       $(`#${id}`).append(`<a href=${linkOf}>${titleOf}</a>`);
+       $(`#${id}`).append(`<p>${snippetOf}</p>`);
+        // console.log(`it works for ${titleOf}`);
+        // console.log(`it works for ${snippetOf}`);
+        // console.log(`it works for ${linkOf}`);
+        
+        // $(".link").html(titleOf);
+        // $(".snippet").html(snippetOf);
+        // // $(".link").html("link");
+        // $(".link").attr("href", linkOf);
         
     }
     
@@ -103,6 +118,26 @@ document.addEventListener("DOMContentLoaded", function(){
                 console.log(item.link);
             });
     }
+
+    function resultsToHtml(element) {
+        $("#resultsDisplayed").html(`${element}`);
+    }
+
+    function topTenForloop(array) {
+        // array_all_items = [];
+        // for (i = 0; i < 10; i++) {
+        //     let item_info = [];
+        //     item_info.push(array.item.title);
+        //     item_info.push(array.item.snippet);
+        //     item_info.push(array.item.link);
+        //     array_all_items.push(item_info);
+            console.log(array);
+        }
+
+
+    
+
+  
 
     
     // function gettingTopTenSearchQuery() {

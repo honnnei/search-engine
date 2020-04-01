@@ -16,7 +16,7 @@ app.get('/', (req, res)=> {
 });
 
 app.get('/results', (req, res)=> {
-    res.sendFile(path.join(__dirname, '/public/results.html'));
+    res.sendFile(path.join(__dirname, '/public/Xresults.html'));
 });
 
 app.get('/luckyresult', (req, res)=> {
