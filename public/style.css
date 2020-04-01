@@ -36,7 +36,6 @@ section.container {
 
 button {
   display: flex;
-  width: 25%;
 }
 
 #searchBox {
