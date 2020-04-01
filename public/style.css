@@ -1,8 +1,75 @@
+html, body {
+  height: 100%;
+}
+
 body {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-family: Arial, sans-serif;
+    }
+
+section.container {
+  margin: 10px 50px 10px 50px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
 }
 
-.notLogo
+
+.buttons_container {
+  margin: 20px auto 20px auto;
+  display: flex;
+  justify-content: space-around;
+  width: 600px;
+}
+
+button {
+  display: flex;
+}
+
+#searchBox {
+  width: 600px;
+  height: 50px;
+  border-radius: 30px;
+  border-color: rgb(177, 170, 170);
+  margin: 20px;
+  padding: 20px;
+}
+
+.logo {
+  width: 250px;
+  height: auto;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+a {
+  /* text-decoration: none; */
+  color: rgb(78, 75, 75);
+}
+
+.link {
+  color: rgb(78, 75, 75);
+  font-size: 16px;
+}
+
+.title {
+  color: rgb(38, 38, 134);
+  font-size: 20px;
+
+}
+
+p {
+  color: rgb(78, 75, 75);
+  font-size: 16px;
+}

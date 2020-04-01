@@ -3,30 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="./style.css">
-    <title>NotGoogle</title>
+    <title>Noogle</title>
     
       
 </head>
 <body>
     <section class="container">
-        <h1 class="notLogo">
-            <span>N</span>
-            <span>o</span>
-            <span>t</span>
-            <span>G</span>
-            <span>o</span>
-            <span>o</span>
-            <span>g</span>
-            <span>l</span>
-            <span>e</span>
-        </h1>
-        <h3 id="text">test text</h3>
+        <img class="logo" src="festisite_google.png">
+    
         <form id="form" action="/results" method="GET">
             <input type="text" value="" id="searchBox">
             <div class="buttons_container">
-                <button type="submit" id="topTenResultsButton">Search All Results</button>
-                <button type="submit" formaction="/luckyresult" id="luckyResultButton">Get Lucky</button>
+                <button type="submit" class="btn btn-light" id="topTenResultsButton">Search All Results</button>
+                <button type="submit" class="btn btn-light" formaction="/luckyresult" id="luckyResultButton">Get Lucky</button>
             </div>
         </form>
         <!-- <div><a id="luckyLink" href=""></a></div> -->
