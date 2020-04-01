@@ -85,8 +85,9 @@ document.addEventListener("DOMContentLoaded", function(){
                     console.log(link);
                     // displayResult(title, snippet, link);
                     displayedResults = results.map(item => {
-                        console.log(item.title);
-                
+                     console.log(item.title.charAt(0));
+
+                        
                         let index = results.indexOf(item)
                         displayResult(index, item.title, item.snippet, item.link);
                     });
@@ -98,8 +99,11 @@ document.addEventListener("DOMContentLoaded", function(){
    
        let id = index.toString();
        $("#resultsDisplayed").append(`<div id=${id}></div>`);
-       $(`#${id}`).append(`<a href=${linkOf}>${titleOf}</a>`);
-       $(`#${id}`).append(`<p>${snippetOf}</p>`);
+       $(`#${id}`).append(`<a class="link" href=${linkOf}></a><br>`);
+       $(`#${id} .link`).text(`${linkOf}`);
+       $(`#${id}`).append(`<a class="title" href=${linkOf}></a>`);
+       $(`#${id} .title`).html(`${titleOf}`);
+       $(`#${id}`).append(`<p class="snippet">${snippetOf}</p>`);
         // console.log(`it works for ${titleOf}`);
         // console.log(`it works for ${snippetOf}`);
         // console.log(`it works for ${linkOf}`);
