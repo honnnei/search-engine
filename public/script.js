@@ -1,41 +1,19 @@
 document.addEventListener("DOMContentLoaded", function(){
     console.log("Testing DOM");
-    let topTenButtonClick = false;
-    let luckyButtonClick = false;
-    
-    $("#topTenResultsButton").click(function(e) {
+
+    $("#topTenResultsButton").click(event => {
         event.preventDefault();
-        topTenButtonClick = true;
-        getQuery();
-    });
-
-    $("#luckyResultButton").click(function(e) {
+        let resultsQuery = $("#searchBox").val();
+        showTopTenResults(resultsQuery)
+    })
+    $("#luckyResultButton").click(event => {
         event.preventDefault();
-        luckyButtonClick = true;
-        getQuery();
-
-    });
-
-
-    function getQuery() {
-        if (topTenButtonClick) {
-            //show top ten results
-            let resultsQuery = $("#searchBox").val();
-            console.log("will show results for: " + resultsQuery);
-            showTopTenResults(resultsQuery);
-        } else if (luckyButtonClick) {
-            //show lucky result
-            let luckyQuery = $("#searchBox").val();
-            console.log("will show one lucky result for: " + luckyQuery);
-            getLuckyPage(luckyQuery)
-        }
-        else {
-            console.log('error');
-        }
-    }
+        let luckyQuery = $("#searchBox").val();
+        getLuckyPage(luckyQuery)
+    })
 
     function getLuckyPage(luckyQuery){
-        axios.get(`https://www.googleapis.com/customsearch/v1?key=AIzaSyBZSy_eMGwVqsKZzHBPvIiBz-HBFmK8Uxo&cx=006369568077011760523:re8fjbecuqp&q=${luckyQuery}`)
+        axios.get(`https://www.googleapis.com/customsearch/v1?key=AIzaSyCCQwD6ahOa5DeFEC5sLeplT88KycyqG_c&cx=006369568077011760523:re8fjbecuqp&q=${luckyQuery}`)
         .then(result => {
             randomIndex = Math.floor(Math.random() * result.data.items.length)
             console.log(result.data.items.length)
@@ -46,14 +24,13 @@ document.addEventListener("DOMContentLoaded", function(){
     }
 
     function showTopTenResults(resultsQuery) {
-                axios.get(`https://www.googleapis.com/customsearch/v1?key=AIzaSyBZSy_eMGwVqsKZzHBPvIiBz-HBFmK8Uxo&cx=006369568077011760523:re8fjbecuqp&q=${resultsQuery}`)
+                axios.get(`https://www.googleapis.com/customsearch/v1?key=AIzaSyCCQwD6ahOa5DeFEC5sLeplT88KycyqG_c&cx=006369568077011760523:re8fjbecuqp&q=${resultsQuery}`)
                 .then(function (googleResults) {
                     let results = [];
                     results = googleResults.data.items
                     let link = results[0].link;
                     console.log(link);
                     displayedResults = results.map(item => {
-                    console.log(item.title.charAt(0));
                     let index = results.indexOf(item)
                     displayResult(index, item.title, item.snippet, item.link);
                     });
