@@ -1,5 +1,4 @@
-### Search Engine - Create a Google Clone
-
+### Noogle Search Engine - a Google Clone
 * Worked in a team of 2 people
 
 ### Technology used:
