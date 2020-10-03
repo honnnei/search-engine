@@ -13,5 +13,3 @@
 #### Main Page
 ![Main Page](./readme_pics/mainpage.png)
 
-#### Results Search
-![Search Results](./readme_pics/searchresults.png)
