@@ -14,4 +14,4 @@
 ![Main Page](./readme_pics/mainpage.png)
 
 #### Results Search
-![Search Results](./readme_pics/searchresults.png)
+![Search Results](./readme_pics/searchresult.png)
